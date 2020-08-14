@@ -71,6 +71,10 @@ h1, h2, h3 {
   color: white;
 }
 
+p {
+  text-align: justify;
+}
+
 .row {
   width: 100%;
   padding: 1rem;
@@ -80,11 +84,13 @@ h1, h2, h3 {
 .red {
   height: 500px;
   background-color: var(--red);
+  color: white;
 }
 
 .lav {
   height: 250px;
   background-color: var(--lav);
+  color: var(--blue);
 }
 
 .lav h1 {
@@ -92,8 +98,9 @@ h1, h2, h3 {
 }
 
 .blue {
-  height: 500px;
+  min-height: 500px;
   background-color: var(--blue);
+  color: white;
 }
 
 </style>

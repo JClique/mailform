@@ -47,6 +47,7 @@ nav ul {
   list-style: none;
   max-width: 800px;
   margin: auto;
+  padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
