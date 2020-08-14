@@ -26,6 +26,24 @@ export default {
   --lav: #E7E6F7;
 }
 
+* {  /* firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #33385C transparent;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E7E6F7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -36,5 +54,46 @@ body {
 #app {
   margin: 0;
   padding: 0;
+  height: 110vh; /* keeps scrollbar active, preventing width change */
+  background-color: var(--lav);
 }
+
+.content {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  bottom: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+.row {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.red {
+  height: 500px;
+  background-color: var(--red);
+}
+
+.lav {
+  height: 250px;
+  background-color: var(--lav);
+}
+
+.lav h1 {
+  color: var(--blue);
+}
+
+.blue {
+  height: 500px;
+  background-color: var(--blue);
+}
+
 </style>

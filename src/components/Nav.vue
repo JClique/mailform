@@ -3,8 +3,7 @@
     <ul>
       <li>
         <router-link to="/">
-          <span class="brand">mail</span>
-          <span class="brand-alt">form</span>
+          <img src="@/assets/Logo (full).svg" alt="">
         </router-link>
       </li>
       <li class="link">
@@ -35,7 +34,11 @@ export default {
 
 nav {
   background-color: var(--lav);
-  border-bottom: 1px solid var(--gray);
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  border-bottom: 2px solid var(--blue);
+  z-index: 1;
 }
 
 nav ul {
@@ -59,8 +62,13 @@ nav ul li:first-child {
   transform: translateY(-5px);
   padding-bottom: 0;
 }
+
 nav ul li:first-child a {
   text-decoration: none;
+}
+
+nav ul li:first-child img {
+  height: 20px;
 }
 
 nav ul li.link a {

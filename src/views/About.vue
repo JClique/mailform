@@ -1,6 +1,13 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="content">
+    <div class="row blue">
+      <h1>This is an about page</h1>
+    </div>
+
+    <div class="row lav">
+      <h1>live demo</h1>
+    </div>
+
   </div>
 </template>
 
@@ -9,9 +16,3 @@ export default {
   name: 'About',
 }
 </script>
-
-<style scoped>
-  h1 {
-    color: var(--red);
-  }
-</style>
