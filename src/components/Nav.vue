@@ -6,11 +6,15 @@
           <img src="@/assets/Logo (full).svg" alt="">
         </router-link>
       </li>
-      <li class="link">
+      <li class="link full">
         <router-link to="/">Home</router-link>
       </li>
-      <li class="link">
+      <li class="link full">
         <router-link to="/about">About</router-link>
+      </li>
+      <li class="mobile">
+        <img src="@/assets/menu.svg" class="menu" @click="$emit('toggleMenu')">
+        <img src="@/assets/menu-close.svg" class="menu" @click="$emit('toggleMenu')" style="display: none; transform: translate(-7px, -2px);">
       </li>
     </ul>
   </nav>
@@ -30,7 +34,7 @@ nav {
   height: 50px;
   position: fixed;
   border-bottom: 2px solid var(--red);
-  z-index: 1;
+  z-index: 5;
 }
 
 nav ul {
@@ -75,6 +79,22 @@ nav ul li.link a {
 nav ul li.link a:hover {
   background-color: var(--blue);
   color: white;
+}
+
+.menu {
+  transform: translateY(-2px);
+}
+
+.mobile {
+  display: none;
+}
+@media (max-width:768px) {
+  .full {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
 }
 
 </style>

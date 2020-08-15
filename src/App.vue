@@ -1,16 +1,29 @@
 <template>
   <div id="app">
-    <Nav />
+    <Nav @toggleMenu="toggleMenu" />
+    <Menu @toggleMenu="toggleMenu" />
     <router-view/>
   </div>
 </template>
 
 <script>
 import Nav from '@/components/Nav.vue'
+import Menu from '@/components/Menu.vue'
 
 export default {
   components: {
-    Nav
+    Nav,
+    Menu
+  },
+  methods: {
+    toggleMenu() {
+      var menu = document.getElementsByClassName("menu");
+      for (var i = 0; i < menu.length; i++) {
+        menu.item(i).style.display = menu.item(i).style.display === 'none' ? '' : 'none';
+      }
+      var body = document.getElementsByTagName("body")[0];
+      body.style.position = body.style.position === 'fixed' ? '' : 'fixed';
+    }
   }
 }
 </script>
