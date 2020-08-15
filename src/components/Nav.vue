@@ -22,22 +22,14 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.brand {
-  color: var(--blue);
-}
-
-.brand-alt {
-  color: var(--red);
-}
 
 nav {
   background-color: var(--lav);
   width: 100%;
   height: 50px;
   position: fixed;
-  border-bottom: 2px solid var(--blue);
+  border-bottom: 2px solid var(--red);
   z-index: 1;
 }
 

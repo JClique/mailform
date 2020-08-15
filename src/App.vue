@@ -44,11 +44,16 @@ export default {
   background: var(--blue);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
 }
 
 #app {
@@ -56,6 +61,7 @@ body {
   padding: 0;
   height: 110vh; /* keeps scrollbar active, preventing width change */
   background-color: var(--lav);
+  overflow-x: hidden;
 }
 
 .content {
@@ -88,7 +94,7 @@ p {
 }
 
 .lav {
-  height: 250px;
+  min-height: 250px;
   background-color: var(--lav);
   color: var(--blue);
 }
