@@ -12,22 +12,34 @@ Vue.use(VueRouter)
   {
     path: '/forms',
     name: 'Forms',
-    component: () => import('@/views/Forms.vue')
+    component: () => import('@/views/Forms.vue'),
+    meta: {
+      requiresAuth: true,
+    }
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('@/components/auth/Login.vue')
+    component: () => import('@/components/auth/Login.vue'),
+    meta: {
+      requiresVisitor: true,
+    }
   },
   {
     path: '/logout',
     name: 'Logout',
-    component: () => import('@/components/auth/Logout.vue')
+    component: () => import('@/components/auth/Logout.vue'),
+    meta: {
+      requiresAuth: true,
+    }
   },
   {
     path: '/register',
     name: 'Register',
-    component: () => import('@/components/auth/Register.vue')
+    component: () => import('@/components/auth/Register.vue'),
+    meta: {
+      requiresVisitor: true,
+    }
   }
 ]
 

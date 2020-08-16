@@ -2,7 +2,12 @@
   <div id="app">
     <Nav @toggleMenu="toggleMenu" />
     <Menu @toggleMenu="toggleMenu" />
-    <router-view/>
+    <transition name="header">
+      <div class="row blue header"></div>
+    </transition>
+    <transition name="router">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -121,5 +126,24 @@ p {
   background-color: var(--blue);
   color: white;
 }
+
+.header {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+}
+
+.router-enter-active, .router-leave-active {
+  transition: opacity .5s ease-in-out;
+}
+
+.router-enter-active {
+  transition-delay: .5s;
+}
+
+.router-enter, .router-leave-to {
+  opacity: 0;
+}
+
 
 </style>

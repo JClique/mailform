@@ -3,10 +3,10 @@
     <li class="link" @click="$emit('toggleMenu')" v-if="loggedIn">
       <router-link to="/forms">Forms</router-link>
     </li>
-    <li class="link" v-if="!loggedIn">
+    <li class="link" @click="$emit('toggleMenu')" v-if="!loggedIn">
       <router-link to="/login">Login</router-link>
     </li>
-    <li class="link" v-if="loggedIn">
+    <li class="link" @click="$emit('toggleMenu')" v-if="loggedIn">
       <router-link to="/logout">Logout</router-link>
     </li>
   </ul>
