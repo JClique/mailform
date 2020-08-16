@@ -10,9 +10,24 @@ Vue.use(VueRouter)
     component: () => import('@/views/Home.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('@/views/About.vue')
+    path: '/forms',
+    name: 'Forms',
+    component: () => import('@/views/Forms.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/components/auth/Login.vue')
+  },
+  {
+    path: '/logout',
+    name: 'Logout',
+    component: () => import('@/components/auth/Logout.vue')
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('@/components/auth/Register.vue')
   }
 ]
 

@@ -117,7 +117,7 @@ p {
 }
 
 .blue {
-  min-height: 500px;
+  min-height: 400px;
   background-color: var(--blue);
   color: white;
 }

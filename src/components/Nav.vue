@@ -6,11 +6,17 @@
           <img src="@/assets/Logo (full).svg" alt="">
         </router-link>
       </li>
-      <li class="link full">
-        <router-link to="/">Home</router-link>
+      <li class="link full" v-if="loggedIn">
+        <router-link to="/forms">My Forms</router-link>
       </li>
-      <li class="link full">
-        <router-link to="/about">About</router-link>
+      <li class="link full" v-if="!loggedIn">
+        <router-link to="/login">Login</router-link>
+      </li>
+      <li class="link full" v-if="!loggedIn">
+        <router-link to="/register">Register</router-link>
+      </li>
+      <li class="link full" v-if="loggedIn">
+        <router-link to="/logout">Logout</router-link>
       </li>
       <li class="mobile">
         <img src="@/assets/menu.svg" class="menu" @click="$emit('toggleMenu')">
@@ -23,6 +29,11 @@
 <script>
 export default {
   name: 'Nav',
+  computed: {
+    loggedIn() {
+      return this.$store.getters.loggedIn
+    }
+  }
 }
 </script>
 

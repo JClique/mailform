@@ -34,6 +34,9 @@
     <div class="row red">
       <h1>pricing - signup</h1>
 
+      <p @click="increment">
+        {{ count }}
+      </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -48,10 +51,20 @@
 import Demo from '@/components/Demo.vue'
 
 export default {
+  name: 'Home',
   components: {
     Demo
   },
-  name: 'Home',
+  computed: {
+    count() {
+      return this.$store.state.count
+    }
+  },
+  methods: {
+    increment() {
+      this.$store.commit('increment')
+    }
+  }
 }
 </script>
 
@@ -76,6 +89,7 @@ ul.steps {
   justify-content: center;
   list-style: none;
   text-align: center;
+  max-width: 1200px;
   margin: auto;
   padding: 0;
 }

@@ -3,11 +3,14 @@ import App from './App.vue'
 import router from './router'
 import VueHighlightJS from 'vue-highlightjs'
 
+import {store} from './store/store'
+
 Vue.config.productionTip = false
 
 Vue.use(VueHighlightJS)
 
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
+  store: store,
 }).$mount('#app')

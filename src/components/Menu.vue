@@ -1,17 +1,25 @@
 <template lang="html">
   <ul class="menu" style="display: none;">
-    <li class="link" @click="$emit('toggleMenu')">
-      <router-link to="/home">Home</router-link>
+    <li class="link" @click="$emit('toggleMenu')" v-if="loggedIn">
+      <router-link to="/forms">Forms</router-link>
     </li>
-    <li class="link" @click="$emit('toggleMenu')">
-      <router-link to="/about">About</router-link>
+    <li class="link" v-if="!loggedIn">
+      <router-link to="/login">Login</router-link>
+    </li>
+    <li class="link" v-if="loggedIn">
+      <router-link to="/logout">Logout</router-link>
     </li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'Menu'
+  name: 'Menu',
+  computed: {
+    loggedIn() {
+      return this.$store.getters.loggedIn
+    }
+  }
 }
 </script>
 
