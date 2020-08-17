@@ -52,43 +52,6 @@ form.demo {
   text-align: right;
 }
 
-form.demo input {
-  width: 100%;
-  margin: 1rem 0;
-  padding: .5rem .75rem;
-  border-radius: 10px;
-  box-sizing: border-box;
-
-  font-family: 'Open Sans', sans-serif;
-  outline: none;
-  border: 1px solid transparent;
-  appearance: none;
-}
-
-form.demo input:focus {
-  border-color: var(--blue);
-}
-
-button {
-  padding: .5rem 1.5rem;
-  border-radius: 10px;
-  background-color: var(--red);
-  color: white;
-
-  font-family: 'Montserrat', sans-serif;
-  outline: none;
-  appearance: none;
-  border: 1px solid transparent;
-}
-
-button:focus, button:hover {
-  border-color: var(--blue);
-}
-
-button:active {
-  background-color: var(--blue);
-}
-
 p {
   width: 500px;
   max-width: 100%;

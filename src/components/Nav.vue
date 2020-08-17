@@ -92,6 +92,11 @@ nav ul li.link a:hover {
   color: white;
 }
 
+.menu:hover, .menu:focus {
+  outline: 1px solid white;
+  outline-offset: 5px;
+}
+
 .menu {
   transform: translateY(-2px);
 }

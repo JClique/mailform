@@ -7,6 +7,7 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
+    base_url: 'http://127.0.0.1:8000',
     token: localStorage.getItem('access_token') || null,
   },
   mutations: {
@@ -25,7 +26,7 @@ export const store = new Vuex.Store({
   actions: {
     retrieveToken(context, credentials) {
       return new Promise((resolve, reject) => {
-        axios.post('http://127.0.0.1:8000/auth/login/', {
+        axios.post(this.state.base_url + '/auth/login/', {
           username: credentials.username,
           password: credentials.password,
         })
@@ -44,7 +45,7 @@ export const store = new Vuex.Store({
     destroyToken(context) {
       if (context.getters.loggedIn) {
         return new Promise((resolve, reject) => {
-          axios.post('http://127.0.0.1:8000/auth/logout/')
+          axios.post(this.state.base_url + '/auth/logout/')
             .then(response => {
               localStorage.removeItem('access_token')
               context.commit('destroyToken')
@@ -58,6 +59,44 @@ export const store = new Vuex.Store({
             })
         })
       }
-    }
+    },
+    postForm(context, form) {
+      if (context.getters.loggedIn) {
+        return new Promise((resolve, reject) => {
+          axios.post(this.state.base_url + '/forms/', {
+            title: form.title,
+            description: form.description
+          },
+          {
+            headers: {
+              Authorization: 'Token ' + this.state.token
+            }
+          })
+            .then(response => {
+              resolve(response)
+            })
+            .catch(error => {
+              reject(error)
+            })
+        })
+      }
+    },
+    retrieveForms(context) {
+      if (context.getters.loggedIn) {
+        return new Promise((resolve, reject) => {
+          axios.get(this.state.base_url + '/forms/', {
+            headers: {
+              Authorization: 'Token ' + this.state.token
+            }
+          })
+            .then(response => {
+              resolve(response)
+            })
+            .catch(error => {
+              reject(error)
+            })
+        })
+      }
+    },
   }
 })

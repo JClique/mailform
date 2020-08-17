@@ -1,7 +1,7 @@
 <template lang="html">
   <ul class="menu" style="display: none;">
     <li class="link" @click="$emit('toggleMenu')" v-if="loggedIn">
-      <router-link to="/forms">Forms</router-link>
+      <router-link to="/forms">My Forms</router-link>
     </li>
     <li class="link" @click="$emit('toggleMenu')" v-if="!loggedIn">
       <router-link to="/login">Login</router-link>

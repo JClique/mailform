@@ -62,10 +62,6 @@ export default {
   background: var(--blue);
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -77,9 +73,9 @@ body {
 #app {
   margin: 0;
   padding: 0;
+  max-width: 100%;
   height: 110vh; /* keeps scrollbar active, preventing width change */
   background-color: var(--lav);
-  overflow-x: hidden;
 }
 
 .content {
@@ -97,6 +93,51 @@ h1, h2, h3 {
 
 p {
   text-align: justify;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+
+  margin-right: 1.5rem;
+  padding: .5rem 2rem;
+
+  background-color: var(--red);
+  color: white;
+
+  border-radius: 5px;
+  border: 1px solid transparent;
+  appearance: none;
+  outline: none;
+}
+
+button:hover {
+  border-color: white;
+}
+
+button:active {
+  box-shadow: inset 0 0 15px rgba(0,0,0, 0.3);
+}
+
+input, textarea {
+  width: 100%;
+  margin: 1rem 0;
+  padding: .5rem .75rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  font-family: 'Open Sans', sans-serif;
+  outline: none;
+  border: 1px solid transparent;
+  appearance: none;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--blue);
+}
+
+textarea {
+  resize: none;
 }
 
 .row {
