@@ -7,7 +7,7 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    base_url: 'http://127.0.0.1:8000',
+    base_url: 'https://api.mailform.online',
     token: localStorage.getItem('access_token') || null,
   },
   mutations: {

@@ -102,9 +102,4 @@ input:focus, textarea:focus {
   border-color: var(--red);
 }
 
-
-button {
-  margin: 0;
-}
-
 </style>

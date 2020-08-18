@@ -6,21 +6,21 @@
 
       <ul class="steps">
         <li>
-          <img src="@/assets/diagrams/browser.png" class="diagram" alt="">
+          <img src="@/assets/diagrams/browser.svg" class="diagram" alt="">
           <h2>User submits form on your webpage</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </li>
         <li>
-          <img src="@/assets/diagrams/server.png" class="diagram" alt="">
+          <img src="@/assets/diagrams/server.svg" class="diagram" alt="">
           <h2>Our secure servers bundle the data into an email</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </li>
         <li>
-          <img src="@/assets/diagrams/laptop.png" class="diagram" alt="">
+          <img src="@/assets/diagrams/laptop.svg" class="diagram" alt="">
           <h2>You receive the data directly in your inbox</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

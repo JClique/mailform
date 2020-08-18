@@ -71,4 +71,8 @@ export default {
     min-height: 600px;
     text-align: left;
   }
+
+  button {
+    margin-right: 1.5rem;
+  }
 </style>

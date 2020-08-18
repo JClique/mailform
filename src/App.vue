@@ -99,7 +99,6 @@ button {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 
-  margin-right: 1.5rem;
   padding: .5rem 2rem;
 
   background-color: var(--red);
