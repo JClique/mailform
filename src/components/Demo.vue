@@ -9,7 +9,7 @@
 
     <p>The form :</p>
     <form class="demo">
-      <input type="text" name="name" placeholder="Your name...">
+      <input type="text" name="name" placeholder="Your ...">
       <input type="text" name="message" placeholder="Your message...">
       <button type="submit">Submit</button>
     </form>
@@ -31,7 +31,7 @@ export default {
       sourcecode: "<form action='https://api.mailform.online/form/456fng486g351123adfg8/' method='POST'>\n"+
       "\t<input type='text' name='name'>\n"+
       "\t<input type='text' name='message'>\n"+
-      "\t<button type='submt'>Submit</button>\n"+
+      "\t<button type='submit'>Submit</button>\n"+
       "</form>"
     }
   },

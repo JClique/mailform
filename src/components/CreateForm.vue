@@ -76,9 +76,12 @@ export default {
   top: 30%;
   transform: translate(-50%, -50%);
   width: 400px;
+  max-width: 90%;
+  box-sizing: border-box;
   border-radius: 25px;
   padding: 1rem;
   background-color: var(--lav);
+  text-align: right;
 }
 
 .modal-close {

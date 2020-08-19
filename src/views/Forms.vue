@@ -1,18 +1,28 @@
 <template>
   <div class="content">
     <div class="column">
-      <button type="button" name="create-new" @click="toggleModal">
-        + Create Form
-      </button>
+      <div class="column-header">
+        <transition name="fade">
+          <h1 key=1 v-if="!targetForm">My Forms</h1>
+          <h1 key=2 v-if="targetForm">{{ targetForm.title }}</h1>
+        </transition>
 
-      <CreateForm v-if="showCreateForm"
-      @hideCreateForm="toggleModal"
-      @retrieveForms="retrieveForms" />
+        <button type="button" @click="toggleModal">
+          + Create Form
+        </button>
 
-      <h1>My Forms</h1>
+        <transition name="modal-fade">
+          <CreateForm v-if="showCreateForm"
+          @hideCreateForm="toggleModal"
+          @retrieveForms="retrieveForms" />
+        </transition>
+      </div>
 
       <div class="forms">
-        <FormList ref="formList"/>
+        <transition name="fade">
+          <FormList ref="formList" @targetForm="setTarget" v-if="!targetForm"/>
+          <TargetForm :form="targetForm" @clearTarget="clearTarget" v-if="targetForm"/>
+        </transition>
       </div>
 
     </div>
@@ -25,17 +35,20 @@
 
 <script>
 import FormList from '@/components/FormList.vue';
+import TargetForm from '@/components/TargetForm.vue';
 import CreateForm from '@/components/CreateForm.vue';
 
 export default {
   name: 'Form',
   components: {
     FormList,
+    TargetForm,
     CreateForm
   },
   data() {
     return {
       showCreateForm: false,
+      targetForm: null,
     }
   },
   methods: {
@@ -44,6 +57,12 @@ export default {
     },
     retrieveForms() {
       this.$refs.formList.retrieveForms()
+    },
+    setTarget(form) {
+      this.targetForm = form;
+    },
+    clearTarget() {
+      this.targetForm = null;
     }
   }
 }
@@ -55,24 +74,40 @@ export default {
     max-width: 900px;
     margin: auto;
     margin-top: 1rem;
-    text-align: right;
   }
 
-  .column h1 {
-    float: left;
-    margin-left: 1.5rem;
-    transform: translateY(-5px);
+  .column-header {
+    margin: 0 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .column-header button {
+    padding: .75rem;
   }
 
   .forms {
-    margin: 1rem;
+    margin: .5rem 1rem;
     border-radius: 10px;
     background-color: var(--lav);
     min-height: 600px;
     text-align: left;
+    transition: 2s;
   }
 
-  button {
-    margin-right: 1.5rem;
+  .fade-enter-active, .fade-leave-active,
+  .modal-fade-enter-active, .modal-fade-leave-active {
+    transition: opacity .5s;
   }
+
+  .fade-enter-active {
+    transition-delay: .5s;
+  }
+
+  .fade-enter, .fade-leave-to,
+  .modal-fade-enter, .modal-fade-leave-to {
+    opacity: 0;
+  }
+
 </style>

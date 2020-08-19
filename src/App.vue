@@ -2,9 +2,7 @@
   <div id="app">
     <Nav @toggleMenu="toggleMenu" />
     <Menu @toggleMenu="toggleMenu" />
-    <transition name="header">
-      <div class="row blue header"></div>
-    </transition>
+    <div class="row blue header"></div>
     <transition name="router">
       <router-view/>
     </transition>
@@ -108,14 +106,20 @@ button {
   border: 1px solid transparent;
   appearance: none;
   outline: none;
+  transition: .4s;
 }
 
 button:hover {
-  border-color: white;
+  box-shadow: inset 0 0 15px rgba(0,0,0, 0.3);
+  cursor: pointer;
 }
 
 button:active {
-  box-shadow: inset 0 0 15px rgba(0,0,0, 0.3);
+  border-color: white;
+}
+
+button.alt {
+  background-color: var(--orange);
 }
 
 input, textarea {
@@ -146,7 +150,7 @@ textarea {
 }
 
 .red {
-  height: 500px;
+  height: 200px;
   background-color: var(--red);
   color: white;
 }
@@ -184,6 +188,5 @@ textarea {
 .router-enter, .router-leave-to {
   opacity: 0;
 }
-
 
 </style>

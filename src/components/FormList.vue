@@ -1,7 +1,7 @@
 <template>
   <ul id="formList">
-    <li v-for="(form, index) in forms" :key="index">
-      {{ form.title }} - {{ form.slug }}
+    <li v-for="(form, index) in forms" :key="index" @click="$emit('targetForm', form)">
+      {{ form.title }} <i>- {{ form.slug }}</i>
       <span>26</span>
     </li>
   </ul>
@@ -42,6 +42,7 @@ export default {
 ul {
   list-style: none;
   padding: 1rem;
+  margin: 0;
 }
 
 li {
@@ -67,4 +68,9 @@ li:hover {
   cursor: pointer;
 }
 
+@media (max-width:632px) {
+  i {
+    visibility: hidden;
+  }
+}
 </style>
