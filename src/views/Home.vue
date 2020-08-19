@@ -7,23 +7,36 @@
       <ul class="steps">
         <li>
           <img src="@/assets/diagrams/browser.svg" class="diagram" alt="">
-          <h2>User submits form on your webpage</h2>
+          <h2>User submits a form on your webpage</h2>
+          <hr>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            You control the style and presentation of your form.
+            Include any inputs you need and submit the data to our API.
+          </p>
+          <p>
+            Your users won't even know the form is powered by us!
           </p>
         </li>
         <li>
           <img src="@/assets/diagrams/server.svg" class="diagram" alt="">
-          <h2>Our secure servers bundle the data into an email</h2>
+          <h2>Our servers bundle the data into an email</h2>
+          <hr>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            The secure request is received, unpackaged into a HTML template and emailed to you.
+          </p>
+          <p>
+            All form and user data is deleted from our servers, logging only the timestamp of submissions for confirmation.
           </p>
         </li>
         <li>
           <img src="@/assets/diagrams/laptop.svg" class="diagram" alt="">
           <h2>You receive the data directly in your inbox</h2>
+          <hr>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Your user is redirected back to your webpage to confirm to submission, and you receive the data in your inbox.
+          </p>
+          <p>
+            You can reply directly to your User (if you request an 'email' field)
           </p>
         </li>
       </ul>
@@ -32,16 +45,15 @@
     <Demo />
 
     <div class="row red">
-      <h1>pricing - signup</h1>
+      <h1>pricing / signup</h1>
 
-      <p @click="increment">
-        {{ count }}
-      </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       </p>
+
+      <Footer />
     </div>
 
   </div>
@@ -49,11 +61,14 @@
 
 <script>
 import Demo from '@/components/Demo.vue'
+import Footer from '@/components/Footer.vue'
+
 
 export default {
   name: 'Home',
   components: {
-    Demo
+    Demo,
+    Footer
   },
   computed: {
     count() {
@@ -73,6 +88,11 @@ export default {
 .row h1 {
   padding: 1rem;
   margin-bottom: 1rem;
+}
+
+.row p {
+  max-width: 800px;
+  margin: auto;
 }
 
 .row.blue h1 {
@@ -100,18 +120,15 @@ ul.steps li {
   margin: 2rem;
 }
 
-.diagram {
-  height: 250px;
-  margin-bottom: 1rem;
-}
-
-.step h2 {
-  max-width: 200px;
+ul.steps li h2 {
+  padding: 0;
+  padding-bottom: .75rem;
 }
 
 .diagram {
   height: 200px;
-  margin-bottom: 2rem;
   padding: 1rem;
+  margin-bottom: .5rem;
 }
+
 </style>

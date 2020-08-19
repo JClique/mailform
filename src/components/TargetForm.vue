@@ -82,16 +82,6 @@ h2 {
   color: var(--blue);
 }
 
-h6 {
-  padding: 1rem 0;
-}
-
-pre, h6 {
-  max-width: 600px;
-  margin: auto;
-  box-sizing: border-box;
-}
-
 pre {
   padding: 0 1rem;
   padding-bottom: 2rem;

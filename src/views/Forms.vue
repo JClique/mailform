@@ -28,6 +28,7 @@
     </div>
 
     <div class="row red">
+      <Footer />
     </div>
 
   </div>
@@ -37,13 +38,15 @@
 import FormList from '@/components/FormList.vue';
 import TargetForm from '@/components/TargetForm.vue';
 import CreateForm from '@/components/CreateForm.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'Form',
   components: {
     FormList,
     TargetForm,
-    CreateForm
+    CreateForm,
+    Footer
   },
   data() {
     return {

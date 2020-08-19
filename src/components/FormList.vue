@@ -1,5 +1,8 @@
 <template>
   <ul id="formList">
+    <p v-if="forms.length == 0">
+      You do not have any forms.
+    </p>
     <li v-for="(form, index) in forms" :key="index" @click="$emit('targetForm', form)">
       {{ form.title }} <i>- {{ form.slug }}</i>
       <span>26</span>
@@ -13,6 +16,7 @@ export default {
   data() {
     return {
       forms: [],
+      message: '',
     }
   },
   mounted() {
@@ -66,6 +70,10 @@ li:hover {
   background-color: var(--red);
   color: white;
   cursor: pointer;
+}
+
+ul p {
+  text-align: center;
 }
 
 @media (max-width:632px) {

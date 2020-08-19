@@ -89,10 +89,6 @@ h1, h2, h3 {
   color: white;
 }
 
-p {
-  text-align: justify;
-}
-
 button {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
@@ -150,7 +146,7 @@ textarea {
 }
 
 .red {
-  height: 200px;
+  min-height: 200px;
   background-color: var(--red);
   color: white;
 }
